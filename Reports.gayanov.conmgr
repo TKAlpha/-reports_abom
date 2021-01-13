@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Reports.gayanov"
+  DTS:DTSID="{BB448ABF-3B4A-4290-B4F2-9EE0DDD1EC08}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=gayanov;Dsn=Reports;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1"
+        p4:Salt="911FDm1ARxM="
+        p4:IV="qGAO77TbTAmxJLO9ah0eMw=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">bMaYfvWnRwbT5Zk2DNsSPW0Jl+ZUioEIJyA6/ACpnVWF9tvHBEnDpAP3pxJJInrNmLUkmubGKkZZZy6024VWoginPCP4qCEQFIbJHiNEEqKa8oYMT9RVggbrKh50XXTgqznuJ7aabcZbKQWBUZQl6wEuA5jw/qC2kuR0l7dr/MA=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

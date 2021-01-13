@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="10.2.2.65.reports.gayanov"
+  DTS:DTSID="{09D859B6-B602-4AE8-A636-A8D4F6ADB7DD}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="server=10.2.2.65;uid=gayanov;Driver={MySQL ODBC 8.0 Unicode Driver};database=reports;port=3306;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1"
+        p4:Salt="G8qSJ8B7xKU="
+        p4:IV="HdnxzKNe5UKoRPpHhRANtw=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">LedOwpRVSiFn7LwT0uHwQOs6Nl6f3mKK8lrYOHUZW845nycQqa4xKRbWXB8z8NNutQ5F7TxiZN8nkNRgGfXgvTI+7CMNAybtd6WArGf1TeqTpo8LUEZMVxvJXlp8qV/lu9OLN3yJ4RNi7gdPO0GpMZGSOnMnDSd3ANOzdTSm+tM=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

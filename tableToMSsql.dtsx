@@ -1,0 +1,1721 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/1/2020 5:31:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LEARNINGMSSQLVM"
+  DTS:CreatorName="LEARNINGMSSQLVM\aagaianov"
+  DTS:DTSID="{CD92D863-8B22-48E5-A703-FA0FC9564BE2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{60423F86-3C91-4A32-B156-860831C37F85}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Копирование таблицы km"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="copyKM"
+      DTS:DTSID="{26453D4A-F1C6-4DB3-8081-71F3FA5F14A3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Копирование таблицы km"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:LoggingMode="1" />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Копирование таблицы km\Вставить назначение"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+              description="Назначение &quot;OLE DB&quot;"
+              name="Вставить назначение"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">[dbo].[km]</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Копирование таблицы km\Вставить назначение.Connections[OleDbConnection]"
+                  connectionManagerID="{71E82CF2-3DD8-41DB-9975-9F83FA680754}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.reports_abom]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Копирование таблицы km\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  errorOrTruncationOperation="Вставить"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;OLE DB&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Копирование таблицы km\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[lk_id]"
+                      cachedDataType="r8"
+                      cachedName="lk_id"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[lk_id]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[lk_id]" />
+                    <inputColumn
+                      refId="Package\Копирование таблицы km\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[km]"
+                      cachedDataType="r8"
+                      cachedName="km"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[km]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[km]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы km\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[lk_id]"
+                      dataType="r8"
+                      name="lk_id" />
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы km\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[km]"
+                      dataType="r8"
+                      name="km" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Копирование таблицы km\Вставить назначение.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                  synchronousInputId="Package\Копирование таблицы km\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Вставить назначение.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы km\Вставить назначение.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Вставить назначение.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы km\Вставить назначение.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Копирование таблицы km\Источник ODBC"
+              componentClassID="Microsoft.SSISODBCSrc"
+              contactInfo="Источник ODBC;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Источник ODBC"
+              name="Источник ODBC"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Имя таблицы для извлечения данных."
+                  expressionType="Notify"
+                  name="TableName">km</property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM km;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Укажите число строк, извлекаемых в одном пакете."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Определяет размер фрагмента при выделении памяти для столбцов больших объектов"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Определяет, как компонент представляет столбцы типа CHAR. Если значение равно False, они представляются как строки байтовых или многобайтовых символов (DT_STR), если True — как строки расширенных символов (DT_WSTR)."
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Число секунд для ожидания выполнения инструкции SQL перед возвратом в приложение."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Кодовая страница столбца, используемая, когда сведения о кодовой странице недоступны в источнике данных."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Int32"
+                  description="Метод, используемый для извлечения данных."
+                  expressionType="Notify"
+                  name="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Тип данных C в ODBC для привязки числовых данных."
+                  expressionType="Notify"
+                  name="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Определяет, как компонент будет привязывать столбцы с типами строк байтовых или многобайтовых символов (SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). Варианты: Юникод (SQL_C_WCHAR) и ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Режим доступа к базе данных."
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="AccessMode">1</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Копирование таблицы km\Источник ODBC.Connections[ODBCConnection]"
+                  connectionManagerID="{09D859B6-B602-4AE8-A636-A8D4F6ADB7DD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[10.2.2.65.reports.gayanov]"
+                  description="Соединение среды выполнения ODBC, используемое для доступа к базе данных."
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC]"
+                  errorRowDisposition="FailComponent"
+                  name="Вывод источника ODBC"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[lk_id]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].ExternalColumns[lk_id]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[lk_id]"
+                      name="lk_id" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[km]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].ExternalColumns[km]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[km]"
+                      name="km" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].ExternalColumns[lk_id]"
+                      dataType="r8"
+                      name="lk_id" />
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].ExternalColumns[km]"
+                      dataType="r8"
+                      name="km" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Копирование таблицы km\Источник ODBC.Outputs[Ошибка при выводе источника ODBC]"
+                  isErrorOut="true"
+                  name="Ошибка при выводе источника ODBC">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Источник ODBC.Outputs[Ошибка при выводе источника ODBC].Columns[lk_id]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].ExternalColumns[lk_id]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Ошибка при выводе источника ODBC].Columns[lk_id]"
+                      name="lk_id" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Источник ODBC.Outputs[Ошибка при выводе источника ODBC].Columns[km]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].ExternalColumns[km]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Ошибка при выводе источника ODBC].Columns[km]"
+                      name="km" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Источник ODBC.Outputs[Ошибка при выводе источника ODBC].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Ошибка при выводе источника ODBC].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Источник ODBC.Outputs[Ошибка при выводе источника ODBC].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Ошибка при выводе источника ODBC].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Копирование таблицы km\Команда OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Команда OLE DB;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;2"
+              description="Выполняет инструкцию SQL для каждой строки в потоке данных. Пример: вызов хранимой процедуры &quot;new employee setup&quot; для всех строк в таблице &quot;new employees&quot;. Примечание. Выполнение инструкции SQL для всех строк большого потока данных может занять длительное время."
+              name="Команда OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[km] SET [km] = ? WHERE [lk_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Копирование таблицы km\Команда OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{71E82CF2-3DD8-41DB-9975-9F83FA680754}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.reports_abom]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Копирование таблицы km\Команда OLE DB.Inputs[Вход команды OLE DB]"
+                  errorOrTruncationOperation="Выполнение команды"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход команды OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB.Inputs[Вход команды OLE DB].Columns[km]"
+                      cachedDataType="r8"
+                      cachedName="km"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Команда OLE DB.Inputs[Вход команды OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[km]" />
+                    <inputColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB.Inputs[Вход команды OLE DB].Columns[lk_id]"
+                      cachedDataType="r8"
+                      cachedName="lk_id"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Команда OLE DB.Inputs[Вход команды OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[lk_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB.Inputs[Вход команды OLE DB].ExternalColumns[Param_0]"
+                      dataType="r8"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB.Inputs[Вход команды OLE DB].ExternalColumns[Param_1]"
+                      dataType="r8"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Копирование таблицы km\Команда OLE DB.Outputs[Выход команды OLE DB]"
+                  exclusionGroup="1"
+                  name="Выход команды OLE DB"
+                  synchronousInputId="Package\Копирование таблицы km\Команда OLE DB.Inputs[Вход команды OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы km\Команда OLE DB.Outputs[Вывод ошибок команды OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок команды OLE DB"
+                  synchronousInputId="Package\Копирование таблицы km\Команда OLE DB.Inputs[Вход команды OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы km\Команда OLE DB.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы km\Команда OLE DB.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Копирование таблицы km\Команда OLE DB 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Команда OLE DB;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;2"
+              description="Выполняет инструкцию SQL для каждой строки в потоке данных. Пример: вызов хранимой процедуры &quot;new employee setup&quot; для всех строк в таблице &quot;new employees&quot;. Примечание. Выполнение инструкции SQL для всех строк большого потока данных может занять длительное время."
+              name="Команда OLE DB 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[km] SET [km] = ? WHERE [lk_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Копирование таблицы km\Команда OLE DB 1.Connections[OleDbConnection]"
+                  connectionManagerID="{71E82CF2-3DD8-41DB-9975-9F83FA680754}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.reports_abom]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Копирование таблицы km\Команда OLE DB 1.Inputs[Вход команды OLE DB]"
+                  errorOrTruncationOperation="Выполнение команды"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход команды OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB 1.Inputs[Вход команды OLE DB].Columns[km]"
+                      cachedDataType="r8"
+                      cachedName="km"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Команда OLE DB 1.Inputs[Вход команды OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[km]" />
+                    <inputColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB 1.Inputs[Вход команды OLE DB].Columns[lk_id]"
+                      cachedDataType="r8"
+                      cachedName="lk_id"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Команда OLE DB 1.Inputs[Вход команды OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[lk_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB 1.Inputs[Вход команды OLE DB].ExternalColumns[Param_0]"
+                      dataType="r8"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB 1.Inputs[Вход команды OLE DB].ExternalColumns[Param_1]"
+                      dataType="r8"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Копирование таблицы km\Команда OLE DB 1.Outputs[Выход команды OLE DB]"
+                  exclusionGroup="1"
+                  name="Выход команды OLE DB"
+                  synchronousInputId="Package\Копирование таблицы km\Команда OLE DB 1.Inputs[Вход команды OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы km\Команда OLE DB 1.Outputs[Вывод ошибок команды OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок команды OLE DB"
+                  synchronousInputId="Package\Копирование таблицы km\Команда OLE DB 1.Inputs[Вход команды OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB 1.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы km\Команда OLE DB 1.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы km\Команда OLE DB 1.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы km\Команда OLE DB 1.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Копирование таблицы km\Сопоставление таблицы km"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Медленно изменяющееся измерение;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;3"
+              description="Обновляет размеры хранилища данных служб SQL Server Analysis Services. Обновляет существующие записи измерений и добавляет новые записи измерений. Пример: обновление таблицы DimProduct в базе данных OLAP AdventureWorksDW с помощью данных из таблицы &quot;Products&quot; в базе данных OLTP AdventureWorks."
+              name="Сопоставление таблицы km"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Задает инструкцию SELECT, которая используется для создания набора строк схемы."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [km], [lk_id] FROM [dbo].[km]</property>
+                <property
+                  dataType="System.String"
+                  description="Задает предложение WHERE в инструкции SELECT, которая выбирает текущую строку среди строк с одинаковыми бизнес-ключами."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, следует ли направлять обновления атрибутов с предысторией на вывод преобразования для обновлений изменяемых атрибутов."
+                  name="UpdateChangingAttributeHistory">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, завершается ли преобразование ошибкой, если столбцы с атрибутами неизменности содержат изменения."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя столбца для выводимого элемента."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, определяются ли обновления выводимых элементов."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, завершается ли преобразование ошибкой в случае сбоя уточняющего запроса существующей записи."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает, что все строки на входе являются новыми или преобразование определяет тип изменения."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Копирование таблицы km\Сопоставление таблицы km.Connections[LookupConnection]"
+                  connectionManagerID="{71E82CF2-3DD8-41DB-9975-9F83FA680754}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.reports_abom]"
+                  description="Определяет соединение для использования при уточняющих запросах таблицы измерения"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения]"
+                  name="Вход медленно изменяющегося измерения">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения].Columns[km]"
+                      cachedDataType="r8"
+                      cachedName="km"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения].ExternalColumns[km]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[km]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения].Columns[lk_id]"
+                      cachedDataType="r8"
+                      cachedName="lk_id"
+                      externalMetadataColumnId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения].ExternalColumns[lk_id]"
+                      lineageId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC].Columns[lk_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения].ExternalColumns[km]"
+                      dataType="r8"
+                      name="km" />
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения].ExternalColumns[lk_id]"
+                      dataType="r8"
+                      name="lk_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Копирование таблицы km\Сопоставление таблицы km.Outputs[Неизменившийся выход]"
+                  description="Неизменившиеся строки"
+                  exclusionGroup="1"
+                  name="Неизменившийся выход"
+                  synchronousInputId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы km\Сопоставление таблицы km.Outputs[Новый выход]"
+                  description="Новые строки"
+                  exclusionGroup="1"
+                  name="Новый выход"
+                  synchronousInputId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы km\Сопоставление таблицы km.Outputs[Выход атрибута неизменности]"
+                  description="Строки с изменениями с столбцах, помеченных FixedAttribute"
+                  exclusionGroup="1"
+                  name="Выход атрибута неизменности"
+                  synchronousInputId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы km\Сопоставление таблицы km.Outputs[Выход обновлений изменяемых атрибутов]"
+                  description="Эти строки содержат новые данные для изменения столбцов ChangingAttribute (Тип 1)"
+                  exclusionGroup="1"
+                  name="Выход обновлений изменяемых атрибутов"
+                  synchronousInputId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы km\Сопоставление таблицы km.Outputs[Выход вставок атрибутов с предысторией]"
+                  description="Изменения атрибута HistoricalAttribute (Тип 2) приводят к образованию этих новых строк"
+                  exclusionGroup="2"
+                  name="Выход вставок атрибутов с предысторией"
+                  synchronousInputId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы km\Сопоставление таблицы km.Outputs[Выход обновлений выводимых элементов]"
+                  description="Данные для обновления незаполненной строки исходного измерения"
+                  exclusionGroup="1"
+                  name="Выход обновлений выводимых элементов"
+                  synchronousInputId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Копирование таблицы km.Paths[Вывод источника ODBC]"
+              endId="Package\Копирование таблицы km\Сопоставление таблицы km.Inputs[Вход медленно изменяющегося измерения]"
+              name="Вывод источника ODBC"
+              startId="Package\Копирование таблицы km\Источник ODBC.Outputs[Вывод источника ODBC]" />
+            <path
+              refId="Package\Копирование таблицы km.Paths[Выход обновлений выводимых элементов]"
+              endId="Package\Копирование таблицы km\Команда OLE DB.Inputs[Вход команды OLE DB]"
+              name="Выход обновлений выводимых элементов"
+              startId="Package\Копирование таблицы km\Сопоставление таблицы km.Outputs[Выход обновлений выводимых элементов]" />
+            <path
+              refId="Package\Копирование таблицы km.Paths[Выход обновлений изменяемых атрибутов]"
+              endId="Package\Копирование таблицы km\Команда OLE DB 1.Inputs[Вход команды OLE DB]"
+              name="Выход обновлений изменяемых атрибутов"
+              startId="Package\Копирование таблицы km\Сопоставление таблицы km.Outputs[Выход обновлений изменяемых атрибутов]" />
+            <path
+              refId="Package\Копирование таблицы km.Paths[Новый выход]"
+              endId="Package\Копирование таблицы km\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;]"
+              name="Новый выход"
+              startId="Package\Копирование таблицы km\Сопоставление таблицы km.Outputs[Новый выход]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Копирование таблицы population"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{92FB9DBA-2A9F-403A-A185-19DF91B380B5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Копирование таблицы population"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Копирование таблицы population\Вставить назначение"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+              description="Назначение &quot;OLE DB&quot;"
+              name="Вставить назначение"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">[dbo].[population]</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Копирование таблицы population\Вставить назначение.Connections[OleDbConnection]"
+                  connectionManagerID="{71E82CF2-3DD8-41DB-9975-9F83FA680754}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.reports_abom]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Копирование таблицы population\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  errorOrTruncationOperation="Вставить"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;OLE DB&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Копирование таблицы population\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[storage_id]"
+                      cachedDataType="i8"
+                      cachedName="storage_id"
+                      externalMetadataColumnId="Package\Копирование таблицы population\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[storage_id]"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].Columns[storage_id]" />
+                    <inputColumn
+                      refId="Package\Копирование таблицы population\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[population]"
+                      cachedDataType="r8"
+                      cachedName="population"
+                      externalMetadataColumnId="Package\Копирование таблицы population\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[population]"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].Columns[population]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы population\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[storage_id]"
+                      dataType="i8"
+                      name="storage_id" />
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы population\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[population]"
+                      dataType="r8"
+                      name="population" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Копирование таблицы population\Вставить назначение.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                  synchronousInputId="Package\Копирование таблицы population\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Копирование таблицы population\Вставить назначение.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы population\Вставить назначение.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы population\Вставить назначение.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы population\Вставить назначение.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Копирование таблицы population\Команда OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Команда OLE DB;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;2"
+              description="Выполняет инструкцию SQL для каждой строки в потоке данных. Пример: вызов хранимой процедуры &quot;new employee setup&quot; для всех строк в таблице &quot;new employees&quot;. Примечание. Выполнение инструкции SQL для всех строк большого потока данных может занять длительное время."
+              name="Команда OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[population] SET [population] = ? WHERE [storage_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Копирование таблицы population\Команда OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{71E82CF2-3DD8-41DB-9975-9F83FA680754}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.reports_abom]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Копирование таблицы population\Команда OLE DB.Inputs[Вход команды OLE DB]"
+                  errorOrTruncationOperation="Выполнение команды"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход команды OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Копирование таблицы population\Команда OLE DB.Inputs[Вход команды OLE DB].Columns[population]"
+                      cachedDataType="r8"
+                      cachedName="population"
+                      externalMetadataColumnId="Package\Копирование таблицы population\Команда OLE DB.Inputs[Вход команды OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].Columns[population]" />
+                    <inputColumn
+                      refId="Package\Копирование таблицы population\Команда OLE DB.Inputs[Вход команды OLE DB].Columns[storage_id]"
+                      cachedDataType="i8"
+                      cachedName="storage_id"
+                      externalMetadataColumnId="Package\Копирование таблицы population\Команда OLE DB.Inputs[Вход команды OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].Columns[storage_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы population\Команда OLE DB.Inputs[Вход команды OLE DB].ExternalColumns[Param_0]"
+                      dataType="r8"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы population\Команда OLE DB.Inputs[Вход команды OLE DB].ExternalColumns[Param_1]"
+                      dataType="i8"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Копирование таблицы population\Команда OLE DB.Outputs[Выход команды OLE DB]"
+                  exclusionGroup="1"
+                  name="Выход команды OLE DB"
+                  synchronousInputId="Package\Копирование таблицы population\Команда OLE DB.Inputs[Вход команды OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы population\Команда OLE DB.Outputs[Вывод ошибок команды OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок команды OLE DB"
+                  synchronousInputId="Package\Копирование таблицы population\Команда OLE DB.Inputs[Вход команды OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Копирование таблицы population\Команда OLE DB.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы population\Команда OLE DB.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы population\Команда OLE DB.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы population\Команда OLE DB.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Копирование таблицы population\Обновление данных в таблице"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Медленно изменяющееся измерение;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;3"
+              description="Обновляет размеры хранилища данных служб SQL Server Analysis Services. Обновляет существующие записи измерений и добавляет новые записи измерений. Пример: обновление таблицы DimProduct в базе данных OLAP AdventureWorksDW с помощью данных из таблицы &quot;Products&quot; в базе данных OLTP AdventureWorks."
+              name="Обновление данных в таблице"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Задает инструкцию SELECT, которая используется для создания набора строк схемы."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [population], [storage_id] FROM [dbo].[population]</property>
+                <property
+                  dataType="System.String"
+                  description="Задает предложение WHERE в инструкции SELECT, которая выбирает текущую строку среди строк с одинаковыми бизнес-ключами."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, следует ли направлять обновления атрибутов с предысторией на вывод преобразования для обновлений изменяемых атрибутов."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, завершается ли преобразование ошибкой, если столбцы с атрибутами неизменности содержат изменения."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя столбца для выводимого элемента."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, определяются ли обновления выводимых элементов."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, завершается ли преобразование ошибкой в случае сбоя уточняющего запроса существующей записи."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает, что все строки на входе являются новыми или преобразование определяет тип изменения."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Копирование таблицы population\Обновление данных в таблице.Connections[LookupConnection]"
+                  connectionManagerID="{71E82CF2-3DD8-41DB-9975-9F83FA680754}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.reports_abom]"
+                  description="Определяет соединение для использования при уточняющих запросах таблицы измерения"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения]"
+                  name="Вход медленно изменяющегося измерения">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения].Columns[population]"
+                      cachedDataType="r8"
+                      cachedName="population"
+                      externalMetadataColumnId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения].ExternalColumns[population]"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].Columns[population]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения].Columns[storage_id]"
+                      cachedDataType="i8"
+                      cachedName="storage_id"
+                      externalMetadataColumnId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения].ExternalColumns[storage_id]"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].Columns[storage_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения].ExternalColumns[population]"
+                      dataType="r8"
+                      name="population" />
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения].ExternalColumns[storage_id]"
+                      dataType="i8"
+                      name="storage_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Копирование таблицы population\Обновление данных в таблице.Outputs[Неизменившийся выход]"
+                  description="Неизменившиеся строки"
+                  exclusionGroup="1"
+                  name="Неизменившийся выход"
+                  synchronousInputId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы population\Обновление данных в таблице.Outputs[Новый выход]"
+                  description="Новые строки"
+                  exclusionGroup="1"
+                  name="Новый выход"
+                  synchronousInputId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы population\Обновление данных в таблице.Outputs[Выход атрибута неизменности]"
+                  description="Строки с изменениями с столбцах, помеченных FixedAttribute"
+                  exclusionGroup="1"
+                  name="Выход атрибута неизменности"
+                  synchronousInputId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы population\Обновление данных в таблице.Outputs[Выход обновлений изменяемых атрибутов]"
+                  description="Эти строки содержат новые данные для изменения столбцов ChangingAttribute (Тип 1)"
+                  exclusionGroup="1"
+                  name="Выход обновлений изменяемых атрибутов"
+                  synchronousInputId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы population\Обновление данных в таблице.Outputs[Выход вставок атрибутов с предысторией]"
+                  description="Изменения атрибута HistoricalAttribute (Тип 2) приводят к образованию этих новых строк"
+                  exclusionGroup="2"
+                  name="Выход вставок атрибутов с предысторией"
+                  synchronousInputId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Копирование таблицы population\Обновление данных в таблице.Outputs[Выход обновлений выводимых элементов]"
+                  description="Данные для обновления незаполненной строки исходного измерения"
+                  exclusionGroup="1"
+                  name="Выход обновлений выводимых элементов"
+                  synchronousInputId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Копирование таблицы population\Получение данных из reports по таблице population"
+              componentClassID="Microsoft.SSISODBCSrc"
+              contactInfo="Источник ODBC;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Источник ODBC"
+              name="Получение данных из reports по таблице population"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Имя таблицы для извлечения данных."
+                  expressionType="Notify"
+                  name="TableName"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
+storage_id,
+population
+FROM population;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Укажите число строк, извлекаемых в одном пакете."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Определяет размер фрагмента при выделении памяти для столбцов больших объектов"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Определяет, как компонент представляет столбцы типа CHAR. Если значение равно False, они представляются как строки байтовых или многобайтовых символов (DT_STR), если True — как строки расширенных символов (DT_WSTR)."
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Число секунд для ожидания выполнения инструкции SQL перед возвратом в приложение."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Кодовая страница столбца, используемая, когда сведения о кодовой странице недоступны в источнике данных."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Int32"
+                  description="Метод, используемый для извлечения данных."
+                  expressionType="Notify"
+                  name="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Тип данных C в ODBC для привязки числовых данных."
+                  expressionType="Notify"
+                  name="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Определяет, как компонент будет привязывать столбцы с типами строк байтовых или многобайтовых символов (SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). Варианты: Юникод (SQL_C_WCHAR) и ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Режим доступа к базе данных."
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="AccessMode">1</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Connections[ODBCConnection]"
+                  connectionManagerID="{09D859B6-B602-4AE8-A636-A8D4F6ADB7DD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[10.2.2.65.reports.gayanov]"
+                  description="Соединение среды выполнения ODBC, используемое для доступа к базе данных."
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC]"
+                  errorRowDisposition="FailComponent"
+                  name="Вывод источника ODBC"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].Columns[storage_id]"
+                      dataType="i8"
+                      externalMetadataColumnId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].ExternalColumns[storage_id]"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].Columns[storage_id]"
+                      name="storage_id" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].Columns[population]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].ExternalColumns[population]"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].Columns[population]"
+                      name="population" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].ExternalColumns[storage_id]"
+                      dataType="i8"
+                      name="storage_id" />
+                    <externalMetadataColumn
+                      refId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].ExternalColumns[population]"
+                      dataType="r8"
+                      name="population" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Ошибка при выводе источника ODBC]"
+                  isErrorOut="true"
+                  name="Ошибка при выводе источника ODBC">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Ошибка при выводе источника ODBC].Columns[storage_id]"
+                      dataType="i8"
+                      externalMetadataColumnId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].ExternalColumns[storage_id]"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Ошибка при выводе источника ODBC].Columns[storage_id]"
+                      name="storage_id" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Ошибка при выводе источника ODBC].Columns[population]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC].ExternalColumns[population]"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Ошибка при выводе источника ODBC].Columns[population]"
+                      name="population" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Ошибка при выводе источника ODBC].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Ошибка при выводе источника ODBC].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Ошибка при выводе источника ODBC].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Ошибка при выводе источника ODBC].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Копирование таблицы population.Paths[Вывод источника ODBC]"
+              endId="Package\Копирование таблицы population\Обновление данных в таблице.Inputs[Вход медленно изменяющегося измерения]"
+              name="Вывод источника ODBC"
+              startId="Package\Копирование таблицы population\Получение данных из reports по таблице population.Outputs[Вывод источника ODBC]" />
+            <path
+              refId="Package\Копирование таблицы population.Paths[Выход обновлений выводимых элементов]"
+              endId="Package\Копирование таблицы population\Команда OLE DB.Inputs[Вход команды OLE DB]"
+              name="Выход обновлений выводимых элементов"
+              startId="Package\Копирование таблицы population\Обновление данных в таблице.Outputs[Выход обновлений выводимых элементов]" />
+            <path
+              refId="Package\Копирование таблицы population.Paths[Новый выход]"
+              endId="Package\Копирование таблицы population\Вставить назначение.Inputs[Вход назначения &quot;OLE DB&quot;]"
+              name="Новый выход"
+              startId="Package\Копирование таблицы population\Обновление данных в таблице.Outputs[Новый выход]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение]"
+      DTS:CreationName=""
+      DTS:DTSID="{9610C9A0-24D9-42C1-A77D-659A955E7AB7}"
+      DTS:From="Package\Копирование таблицы km"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение"
+      DTS:To="Package\Копирование таблицы population" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{FDEE726D-54FF-4ADA-A7BF-F8B701E64B54}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="Свойство распространения события"
+          DTS:DTSID="{E87ECC79-7631-4850-8A87-5B3F30F800F7}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables />
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Копирование таблицы km"
+          TopLeft="505,99" />
+        <NodeLayout
+          Size="242,42"
+          Id="Package\Копирование таблицы population"
+          TopLeft="480,242" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение]"
+          TopLeft="604.75,141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,101"
+              Start="0,0"
+              End="0,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Копирование таблицы km">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Копирование таблицы km\Команда OLE DB"
+          TopLeft="479,209.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Копирование таблицы km\Команда OLE DB 1"
+          TopLeft="699.5,209.5" />
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Копирование таблицы km\Сопоставление таблицы km"
+          TopLeft="451,107.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Копирование таблицы km\Источник ODBC"
+          TopLeft="481,5.5" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Копирование таблицы km\Вставить назначение"
+          TopLeft="235.5,209.5" />
+        <EdgeLayout
+          Id="Package\Копирование таблицы km.Paths[Выход обновлений изменяемых атрибутов]"
+          TopLeft="611,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="173,59.9999999999999"
+              Start="0,0"
+              End="173,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4878048780487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4878048780487"
+                    Point2="0,20.4878048780487"
+                    Point3="4,20.4878048780487" />
+                  <mssgle:LineSegment
+                    End="169,20.4878048780487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="169,20.4878048780487"
+                    Point2="173,20.4878048780487"
+                    Point3="173,24.4878048780487" />
+                  <mssgle:LineSegment
+                    End="173,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-12.13205078125,25.4878048780487,197.2641015625,12"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Копирование таблицы km.Paths[Выход обновлений выводимых элементов]"
+          TopLeft="559,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-97.26205078125,20.6015625,194.5241015625,11.296875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Копирование таблицы km.Paths[Вывод источника ODBC]"
+          TopLeft="559,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Копирование таблицы km.Paths[Новый выход]"
+          TopLeft="507,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-180,60"
+              Start="0,0"
+              End="-180,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4878048780488" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4878048780488"
+                    Point2="0,20.4878048780488"
+                    Point3="-4,20.4878048780488" />
+                  <mssgle:LineSegment
+                    End="-176,20.4878048780488" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-176,20.4878048780488"
+                    Point2="-180,20.4878048780488"
+                    Point3="-180,24.4878048780488" />
+                  <mssgle:LineSegment
+                    End="-180,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-121.13224609375,25.4878048780488,62.2644921875,11.296875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Копирование таблицы km\Источник ODBC">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Копирование таблицы km\Сопоставление таблицы km">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{71E82CF2-3DD8-41DB-9975-9F83FA680754}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[km]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Источник ODBC.Выводы[Вывод источника ODBC].Столбцы[km]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;km&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Источник ODBC.Выводы[Вывод источника ODBC].Столбцы[lk_id]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;lk_id&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Вставить назначение&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Команда OLE DB&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Команда OLE DB 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Копирование таблицы population">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="334,42"
+          Id="Package\Копирование таблицы population\Получение данных из reports по таблице population"
+          TopLeft="162,5.5" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Копирование таблицы population\Обновление данных в таблице"
+          TopLeft="213.5,107.5" />
+        <EdgeLayout
+          Id="Package\Копирование таблицы population.Paths[Вывод источника ODBC]"
+          TopLeft="329,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Копирование таблицы population\Вставить назначение"
+          TopLeft="5.50000000000006,209.5" />
+        <EdgeLayout
+          Id="Package\Копирование таблицы population.Paths[Новый выход]"
+          TopLeft="291.833333333333,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-194.833333333333,60"
+              Start="0,0"
+              End="-194.833333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2476354256234" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2476354256234"
+                    Point2="0,24.2476354256234"
+                    Point3="-4,24.2476354256234" />
+                  <mssgle:LineSegment
+                    End="-190.833333333333,24.2476354256234" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-190.833333333333,24.2476354256234"
+                    Point2="-194.833333333333,24.2476354256234"
+                    Point3="-194.833333333333,28.2476354256234" />
+                  <mssgle:LineSegment
+                    End="-194.833333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-128.548912760417,29.2476354256234,62.2644921875,11.296875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Копирование таблицы population\Команда OLE DB"
+          TopLeft="447,209.5" />
+        <EdgeLayout
+          Id="Package\Копирование таблицы population.Paths[Выход обновлений выводимых элементов]"
+          TopLeft="366.166666666667,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="160.833333333333,60"
+              Start="0,0"
+              End="160.833333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2476354256234" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2476354256234"
+                    Point2="0,24.2476354256234"
+                    Point3="4,24.2476354256234" />
+                  <mssgle:LineSegment
+                    End="156.833333333333,24.2476354256234" />
+                  <mssgle:CubicBezierSegment
+                    Point1="156.833333333333,24.2476354256234"
+                    Point2="160.833333333333,24.2476354256234"
+                    Point3="160.833333333333,28.2476354256234" />
+                  <mssgle:LineSegment
+                    End="160.833333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-16.8453841145834,29.2476354256234,194.5241015625,11.296875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Копирование таблицы population\Обновление данных в таблице">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{71E82CF2-3DD8-41DB-9975-9F83FA680754}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[population]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Получение данных из reports по таблице population.Выводы[Вывод источника ODBC].Столбцы[population]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;population&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Получение данных из reports по таблице population.Выводы[Вывод источника ODBC].Столбцы[storage_id]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;storage_id&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Вставить назначение&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Команда OLE DB&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Копирование таблицы population\Получение данных из reports по таблице population">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
